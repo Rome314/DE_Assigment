@@ -2,11 +2,11 @@ from DE_Assigment.ploting import *
 
 # Costs:
 # ______________________________
-steps_count = 1000
-X = 0
+steps_count = 100
+X = 10
 
-glob_err_start = 10
-glob_err_end = 100
+glob_err_start = 20
+glob_err_end = 1000
 # ______________________________
 
 

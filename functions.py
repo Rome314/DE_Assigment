@@ -1,19 +1,16 @@
-from math import exp
+from math import exp, sin, cos
 
 
 # Original function and it's exact solution:
 def f(x, y):
-    return (1 - 2 * y) * exp(x) + y * y + exp(2 * x)
-
-
-# assypmtot = (5 - 9 * exp(5)) / (2 * exp(5) - 1)
+    return exp(-sin(x)) - y * cos(x)
 
 
 def exact(x):
-    return (-exp(x) * (x + 5) + exp(x + 5) * (2 * x + 9) - (2 * exp(5)) + 1) / (-x + exp(5) * (2 * x + 9) - 5)
+    return exp(-sin(x)) + x * exp(-sin(x))
 
 
-# Helping functions for Runge-Kutta method:
+# Helping fxunctions for Runge-Kutta method:
 
 def k1(x, y):
     return f(x, y)
@@ -39,5 +36,3 @@ def rk_delta(x, y, h):
 
 def imp_Euler_delta(x, y, h):
     return h * f(x + h / 2, y + h / 2 * f(x, y))
-
-

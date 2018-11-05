@@ -3,13 +3,12 @@ from DE_Assigment.functions import *
 # Here functions to find x's and y's for each function in range [X0:X]
 # Where:
 #   X0 = -5
-#   Y0 = 2
 #   X = final_x(You can change it in main function)
 
 def euler_solution(count_steps, final_x):
     # Initial values
-    x = [-5.0]
-    y = [2]
+    x = [0]
+    y = [1]
     # step size
     h = (final_x - x[0]) / count_steps
 
@@ -23,8 +22,8 @@ def euler_solution(count_steps, final_x):
 
 
 def exact_solution(steps_count, final_x):
-    x = [-5.0]  # x0
-    y = [2.0]  # y0
+    x = [0]  # x0
+    y = [1]  # y0
 
     h = (final_x - x[0]) / steps_count
 
@@ -36,8 +35,8 @@ def exact_solution(steps_count, final_x):
 
 
 def runge_kutta_solution(steps_count, final_x):
-    x = [-5.0]  # x0
-    y = [2.0]  # y0
+    x = [0]  # x0
+    y = [1]  # y0
 
     h = (final_x - x[0]) / steps_count
 
@@ -48,8 +47,8 @@ def runge_kutta_solution(steps_count, final_x):
 
 
 def improved_euler_solution(steps_count, final_x):
-    x = [-5.0]  # x0
-    y = [2.0]  # y0
+    x = [0]  # x0
+    y = [1]  # y0
 
     h = (final_x - x[0]) / steps_count
 
