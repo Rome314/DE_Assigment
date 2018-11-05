@@ -1,9 +1,26 @@
-from .functions import *
+from DE_Assigment.functions import *
 
-# Kere functions to find x's and y's for each function in range [X0:X]
+# Here functions to find x's and y's for each function in range [X0:X]
 # Where:
 #   X0 = -5
+#   Y0 = 2
 #   X = final_x(You can change it in main function)
+
+def euler_solution(count_steps, final_x):
+    # Initial values
+    x = [-5.0]
+    y = [2]
+    # step size
+    h = (final_x - x[0]) / count_steps
+
+    for i in range(count_steps):
+        # here graph is created point by point
+        x.append(x[i] + h)
+        y.append(y[i] + h * (f(x[i], y[i])))
+
+    return x,y
+
+
 
 def exact_solution(steps_count, final_x):
     x = [-5.0]  # x0
@@ -14,7 +31,7 @@ def exact_solution(steps_count, final_x):
     for i in range(steps_count):
         x.append(x[i] + h)
         y.append(exact(x[i]))
-    y.append(exact(x[-1]))
+
     return x, y
 
 
@@ -40,3 +57,5 @@ def improved_euler_solution(steps_count, final_x):
         x.append(x[i] + h)
         y.append(y[i] + imp_Euler_delta(x[i], y[i], h))
     return x, y
+
+

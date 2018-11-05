@@ -6,6 +6,9 @@ def f(x, y):
     return (1 - 2 * y) * exp(x) + y * y + exp(2 * x)
 
 
+# assypmtot = (5 - 9 * exp(5)) / (2 * exp(5) - 1)
+
+
 def exact(x):
     return (-exp(x) * (x + 5) + exp(x + 5) * (2 * x + 9) - (2 * exp(5)) + 1) / (-x + exp(5) * (2 * x + 9) - 5)
 
@@ -36,3 +39,5 @@ def rk_delta(x, y, h):
 
 def imp_Euler_delta(x, y, h):
     return h * f(x + h / 2, y + h / 2 * f(x, y))
+
+
